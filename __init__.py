@@ -42,7 +42,7 @@ def extract_minutes(date_string):
         minutes = date_object.minute
         return jsonify({'minutes': minutes})
 
-@app.route('/commits/')
+@app.route('/getcommits/')
 def commits():
     response = urlopen("https://api.github.com/repos/euzzeud/5MCSI_Metriques/commits")
     raw_content = response.read()
@@ -57,6 +57,10 @@ def commits():
         results.append({'minute': minute})
 
     return jsonify(results=results)
+
+@app.route("/commits/")
+def commitGraphique():
+    return render_template("commits.html")
   
 if __name__ == "__main__":
   app.run(debug=True)
