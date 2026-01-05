@@ -44,12 +44,13 @@ def extract_minutes(date_string):
 
 @app.route('/commits/')
 def commits():
-    response = urlopen("https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits")
+    response = urlopen("https://api.github.com/repos/euzzeud/5MCSI_Metriques/commits")
     raw_content = response.read()
     commits = json.loads(raw_content.decode('utf-8'))
 
     results = []
-    for commit in commits.get('list', []):
+
+    for commit in commits:
         date_string = commit['commit']['author']['date']
         date_object = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
         minute = date_object.minute
