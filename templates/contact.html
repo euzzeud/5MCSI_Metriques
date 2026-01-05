@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact.css">
     <title>Ma page de contact</title>
 </head>
 <body>
-    <div class="contact_form">
-        <form action="" method="post">
-            <label for="lastname">Nom :</label>
-            <input type="text" name="lastname" id="lastname">
-            <label for="firstname">Prénom :</label>
-            <input type="text" name="firstname" id="firstname">
-            <label for="message">Message :</label>
-            <input type="text" name="message" id="message">
+    <div class="contact-container">
+        <h1>Contactez-moi</h1>
+        <form class="contact-form" action="" method="post">
+            <div class="field-row">
+                <div class="field">
+                    <label for="lastname">Nom</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Ex : GIOIELLI" required>
+                </div>
+                <div class="field">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Ex : Enzo" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Écrivez votre message ici..." required></textarea>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn">Envoyer le message</button>
+            </div>
         </form>
     </div>
 </body>
